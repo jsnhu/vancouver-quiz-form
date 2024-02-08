@@ -86,9 +86,9 @@ body {
     text-align: center;
 }
 
-/* .top-section {
-    background-color: #111;
-} */
+.top-section {
+    margin-bottom: 50px;
+}
 
 .top-section p {
     margin-bottom: 5px;
