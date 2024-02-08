@@ -31,6 +31,7 @@ body {
     flex: 2;
     min-width: 60vw;
     height: 100vh;
+    padding: 20px min(50px, 5vw);
 
 }
 
@@ -82,4 +83,20 @@ body {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.719);
     text-align: center;
+}
+
+.top-section p {
+    margin-bottom: 5px;
+}
+
+.top-section em {
+    background: linear-gradient(to right, #D66D75, #E29587);
+    background-clip: text;
+    color: transparent;
+}
+
+.silence {
+    font-size: 1.1rem;
+    color: rgb(146, 146, 146);
+    font-weight: lighter;
 }
