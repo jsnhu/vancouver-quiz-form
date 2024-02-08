@@ -11,11 +11,12 @@ body {
     flex-wrap: wrap;
     background-color: #222;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 .left-side {
     position: relative;
-    /* background-image: url(sunset.avif); */
+    background-image: url(sunset.avif);
     background-repeat: no-repeat;
     background-size: cover;
     flex: 1;
@@ -119,4 +120,12 @@ input {
     font-size: 1.2rem;
     display: block;
     color: #ccc;
+    margin: 10px 0px;
 }
+
+ul li {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
