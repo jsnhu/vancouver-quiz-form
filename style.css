@@ -15,7 +15,7 @@ body {
 
 .left-side {
     position: relative;
-    background-image: url(sunset.avif);
+    /* background-image: url(sunset.avif); */
     background-repeat: no-repeat;
     background-size: cover;
     flex: 1;
@@ -85,6 +85,10 @@ body {
     text-align: center;
 }
 
+.top-section {
+    background-color: #111;
+}
+
 .top-section p {
     margin-bottom: 5px;
 }
@@ -99,4 +103,20 @@ body {
     font-size: 1.1rem;
     color: rgb(146, 146, 146);
     font-weight: lighter;
+}
+
+input {
+    background-color: #1d1d1d;
+    border: 1px solid #606060;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+}
+
+.form-input label {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    display: block;
+    color: #ccc;
 }
