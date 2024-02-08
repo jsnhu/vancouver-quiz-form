@@ -147,9 +147,9 @@ ul li {
 .form-section {
     background-color: #151515;
     /* margin: 0px -20px -20px -20px; */
-    border: 1px solid rgba(255, 255, 255, 0.614);
+    border: 1px solid rgba(255, 149, 0, 0.614);
     border-radius: 20px;
-    padding: 20px 0px 40px;
+    padding: 20px 5px 40px;
     margin: 30px -10px;
 }
 
