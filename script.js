@@ -9,12 +9,13 @@ quizAnswerKey = {
 function checkQuiz() {
     userSelections = document.querySelectorAll(`#quiz-form input[type='radio']:checked`);
 
-    if (!checkAllQuestionsAnswered(userSelections)) {
-        console.log('have not answered all questions');
-        return
-    }
+    // if (!checkAllQuestionsAnswered(userSelections)) {
+    //     console.log('have not answered all questions');
+    //     return
+    // }
 
-    checkUserAnswers(userSelections);
+    const numCorrect = checkUserAnswers(userSelections);
+    
 
 }
 
@@ -29,13 +30,13 @@ function checkUserAnswers(userSelections) {
     userSelections.forEach((selection) => {
         if (checkAnswerIsCorrect(selection)) {
             numCorrect++;
-            // color in the label green
-            // selection.parentNode.style.borderColor = '#88ff88'
+            selection.parentNode.parentNode.parentNode.style.borderColor = '#88ff88'
             selection.parentNode.querySelector('label').style.backgroundColor = '#88ff88'
+            selection.parentNode.querySelector('label').style.color = '#000000'
         } else {
-            // color in the label red
-            // selection.parentNode.style.borderColor = '#ff8888'
+            selection.parentNode.parentNode.parentNode.style.borderColor = '#f88f88'            
             selection.parentNode.querySelector('label').style.backgroundColor = '#ff8888'
+            selection.parentNode.querySelector('label').style.color = '#000000'
         }
     })
 
