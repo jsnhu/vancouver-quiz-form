@@ -217,3 +217,28 @@ ul li {
     background-color: #FFA500;
     color: black;
 }
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quiz-submit {
+    width: auto;
+    background-color: #111;
+    color: #eee;
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 20px;
+    margin: 0px 30px;
+    border: 2px solid rgba(255, 149, 0, 0.614);
+    border-radius: 50px;
+    flex: 1;
+    cursor: pointer;
+}
+
+#quiz-submit:active {
+    background-color: rgba(255, 149, 0, 1);
+    transform: translateY(4px);
+}
