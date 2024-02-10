@@ -10,12 +10,16 @@ const submitButton = document.querySelector('#quiz-submit');
 submitButton.addEventListener('click', checkQuiz)
 
 function checkQuiz() {
-    userSelections = document.querySelectorAll(`#quiz-form input[type='radio']:checked`);
+    const userSelections = document.querySelectorAll(`#quiz-form input[type='radio']:checked`);
+    const missingAnswersDiv = document.querySelector('#missing-answers');
 
-    // if (!checkAllQuestionsAnswered(userSelections)) {
-    //     console.log('have not answered all questions');
-    //     return
-    // }
+    if (!checkAllQuestionsAnswered(userSelections)) {
+        console.log('have not answered all questions');
+        missingAnswersDiv.style.display = 'block';
+        return
+    }
+
+    missingAnswersDiv.style.display = 'none';
 
     const numCorrect = checkUserAnswers(userSelections);
     const totalQuestions = Object.keys(quizAnswerKey).length;
