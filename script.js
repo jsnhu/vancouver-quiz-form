@@ -11,12 +11,12 @@ console.log("working");
 function checkQuiz() {
     userSelections = document.querySelectorAll(`#quiz-form input[type='radio']:checked`);
 
-    if (!checkAllQuestionsAnswered(userSelections)) {
-        console.log('have not answered all questions');
-        return
-    }
+    // if (!checkAllQuestionsAnswered(userSelections)) {
+    //     console.log('have not answered all questions');
+    //     return
+    // }
 
-    getUserAnswers(userSelections);
+    console.log(getUserAnswers(userSelections));
 
 }
 
@@ -29,6 +29,9 @@ function getUserAnswers(userSelections) {
 
     userSelections.forEach((selection) => {
         console.log(selection.name);
-        console.log(selection.id);
+        console.log(selection.id.slice(-1));
+        userAnswers[selection.name] = selection.id.slice(-1);
     })
+
+    return userAnswers
 }
