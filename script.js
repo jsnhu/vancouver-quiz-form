@@ -16,7 +16,8 @@ function checkQuiz() {
     //     return
     // }
 
-    console.log(getUserAnswers(userSelections));
+    // console.log(getUserAnswers(userSelections));
+    checkUserAnswers(userSelections);
 
 }
 
@@ -24,14 +25,40 @@ function checkAllQuestionsAnswered(userSelections) {
     return (userSelections.length == 5);
 }
 
-function getUserAnswers(userSelections) {
-    userAnswers = {};
+function checkUserAnswers(userSelections) {
+    let numCorrect = 0;
+    const totalQuestions = Object.keys(quizAnswerKey).length;
 
     userSelections.forEach((selection) => {
-        console.log(selection.name);
-        console.log(selection.id.slice(-1));
-        userAnswers[selection.name] = selection.id.slice(-1);
+        if (checkAnswerIsCorrect(selection)) {
+            numCorrect++;
+            // color in the label green
+            // selection.parentNode.style.borderColor = '#88ff88'
+            selection.parentNode.querySelector('label').style.backgroundColor = '#88ff88'
+        } else {
+            // color in the label red
+            // selection.parentNode.style.borderColor = '#ff8888'
+            selection.parentNode.querySelector('label').style.backgroundColor = '#ff8888'
+        }
     })
 
-    return userAnswers
+    return numCorrect;
 }
+
+function checkAnswerIsCorrect(selection) {
+    const question = selection.name;
+    const userAnswer = selection.id.slice(-1);
+    return (quizAnswerKey[question] == userAnswer);
+}
+
+// function getUserAnswers(userSelections) {
+//     userAnswers = {};
+
+//     userSelections.forEach((selection) => {
+//         console.log(selection.name);
+//         console.log(selection.id.slice(-1));
+//         userAnswers[selection.name] = selection.id.slice(-1);
+//     })
+
+//     return userAnswers;
+// }
