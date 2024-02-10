@@ -6,17 +6,14 @@ quizAnswerKey = {
     'question-5': 'd',
 }
 
-console.log("working");
-
 function checkQuiz() {
     userSelections = document.querySelectorAll(`#quiz-form input[type='radio']:checked`);
 
-    // if (!checkAllQuestionsAnswered(userSelections)) {
-    //     console.log('have not answered all questions');
-    //     return
-    // }
+    if (!checkAllQuestionsAnswered(userSelections)) {
+        console.log('have not answered all questions');
+        return
+    }
 
-    // console.log(getUserAnswers(userSelections));
     checkUserAnswers(userSelections);
 
 }
@@ -50,15 +47,3 @@ function checkAnswerIsCorrect(selection) {
     const userAnswer = selection.id.slice(-1);
     return (quizAnswerKey[question] == userAnswer);
 }
-
-// function getUserAnswers(userSelections) {
-//     userAnswers = {};
-
-//     userSelections.forEach((selection) => {
-//         console.log(selection.name);
-//         console.log(selection.id.slice(-1));
-//         userAnswers[selection.name] = selection.id.slice(-1);
-//     })
-
-//     return userAnswers;
-// }
