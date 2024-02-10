@@ -207,8 +207,7 @@ ul li {
     color: #aaa;
 }
 
-#quiz-form ul li:first-child label {
-    /* background-color: white; */
+/* #quiz-form ul li:first-child label {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -216,4 +215,8 @@ ul li {
 #quiz-form ul li:last-child label {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+} */
+
+#quiz-form ul {
+    margin: 0;
 }
