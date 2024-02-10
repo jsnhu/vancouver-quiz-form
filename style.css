@@ -248,12 +248,11 @@ ul li {
 #result-container {
     display: none;
     background-color: #88ff88;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
     align-items: center;
     padding: 20px;
-    margin-top: 20px;
-    margin-left: -7.5px;
-    margin-right: -7.5px;
+    margin: 20px -7.5px;
 }
 
 #pre-result {
