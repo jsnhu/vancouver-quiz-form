@@ -246,16 +246,14 @@ ul li {
 }
 
 #result-container {
-    display: flex;
-    flex-direction: column;
+    display: none;
     background-color: #88ff88;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 20px;
     margin-top: 20px;
     margin-left: -7.5px;
     margin-right: -7.5px;
-    display: none;
 }
 
 #pre-result {
