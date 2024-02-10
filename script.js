@@ -23,13 +23,39 @@ function checkQuiz() {
 
     const numCorrect = checkUserAnswers(userSelections);
     const totalQuestions = Object.keys(quizAnswerKey).length;
-    const score = Math.floor(numCorrect/totalQuestions*100) + "%"
+    const score = Math.floor(numCorrect/totalQuestions*100);
+
+    const allCorrectColour = [136, 255, 136];
+    const allWrongColour = [255, 136, 136];
+    const displayColour = interpolateBetweenRGBColours(allWrongColour, allCorrectColour, score/100);
+    const displayColourString = getRGBStringFromArray(displayColour);
 
     const scoreDiv = document.querySelector('#score');
-    scoreDiv.textContent = score;
+    scoreDiv.textContent = score + "%";
+    scoreDiv.parentNode.style.backgroundColor = displayColourString;
     scoreDiv.parentNode.style.display = 'flex';
+    
 
 
+}
+
+function getRGBStringFromArray(array) {
+    return `rgb(${array[0]}, ${array[1]}, ${array[2]})`;
+}
+function interpolateBetweenRGBColours(beginColour, endColour, percentage) {
+    const resultArray = [];
+    for (i=0;i<beginColour.length;i++) {
+        resultArray.push(interpolateBetween(
+            beginColour[i],
+            endColour[i],
+            percentage
+        ));
+    }
+    return resultArray;
+}
+
+function interpolateBetween(begin, end, percentage) {
+    return begin + percentage * (end - begin);
 }
 
 function checkAllQuestionsAnswered(userSelections) {
