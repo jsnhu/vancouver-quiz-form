@@ -15,7 +15,14 @@ function checkQuiz() {
     // }
 
     const numCorrect = checkUserAnswers(userSelections);
-    
+    const totalQuestions = Object.keys(quizAnswerKey).length;
+
+    const submitButton = document.querySelector('#quiz-submit');
+
+    const progressBar = document.createElement('progress');
+    progressBar.max = 100
+    progressBar.value = Math.floor(numCorrect/totalQuestions*100);
+    submitButton.parentNode.appendChild(progressBar)
 
 }
 
@@ -25,7 +32,6 @@ function checkAllQuestionsAnswered(userSelections) {
 
 function checkUserAnswers(userSelections) {
     let numCorrect = 0;
-    const totalQuestions = Object.keys(quizAnswerKey).length;
 
     userSelections.forEach((selection) => {
         if (checkAnswerIsCorrect(selection)) {
