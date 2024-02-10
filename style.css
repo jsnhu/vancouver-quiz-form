@@ -268,4 +268,13 @@ ul li {
 
 }
 
+#missing-answers {
+    background-color: rgb(255, 183, 0);
+    margin: 20px -7.5px;
+    /* font-weight: lighter; */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    display: none;
+}
 
