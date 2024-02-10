@@ -19,6 +19,11 @@ function checkQuiz() {
 
     const numCorrect = checkUserAnswers(userSelections);
     const totalQuestions = Object.keys(quizAnswerKey).length;
+    const score = Math.floor(numCorrect/totalQuestions*100) + "%"
+
+    const scoreDiv = document.querySelector('#score');
+    scoreDiv.textContent = score;
+    scoreDiv.parentNode.style.display = 'flex';
 
 
 }
