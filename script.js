@@ -6,6 +6,9 @@ quizAnswerKey = {
     'question-5': 'd',
 }
 
+const submitButton = document.querySelector('#quiz-submit');
+submitButton.addEventListener('click', checkQuiz)
+
 function checkQuiz() {
     userSelections = document.querySelectorAll(`#quiz-form input[type='radio']:checked`);
 
@@ -17,12 +20,6 @@ function checkQuiz() {
     const numCorrect = checkUserAnswers(userSelections);
     const totalQuestions = Object.keys(quizAnswerKey).length;
 
-    const submitButton = document.querySelector('#quiz-submit');
-
-    const progressBar = document.createElement('progress');
-    progressBar.max = 100
-    progressBar.value = Math.floor(numCorrect/totalQuestions*100);
-    submitButton.parentNode.appendChild(progressBar)
 
 }
 
