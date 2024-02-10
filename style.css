@@ -32,7 +32,7 @@ body {
     flex: 2;
     min-width: 60vw;
     height: 100vh;
-    padding: 20px min(50px, 5vw);
+    padding: 20px min(50px, 2vw);
 
 }
 
@@ -150,7 +150,7 @@ ul li {
     border: 1px solid rgba(255, 149, 0, 0.614);
     border-radius: 20px;
     padding: 20px 5px 40px;
-    margin: 30px -10px;
+    margin: 30px 2px;
 }
 
 .form-section h2 {
@@ -170,12 +170,13 @@ ul li {
 #quiz-form ol {
     margin-left: 0px;
     padding: 0px;
+    list-style-type: none;
 }
 
 #quiz-form ol>li {
     background-color: #2a2a2a;
     padding: 20px 5px;
-    border: 4px ridge #dfdfdf63;
+    border: 2px ridge #dfdfdf63;
     border-radius: 20px;
     margin: 10px 0px;
 }
@@ -194,3 +195,8 @@ ul li {
 #quiz-form input[type="radio"] {
     display: none;
 } 
+
+#quiz-form label {
+    background-color: #111;
+    border: 1px solid white;
+}
